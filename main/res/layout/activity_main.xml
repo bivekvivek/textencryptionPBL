@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#aafffbb8"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:paddingLeft="10.0sp"
+    android:paddingRight="10.0sp"
+    android:layout_marginTop="5sp"
+    android:weightSum="1.0">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#e7bdbd"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Text here for Encryption or Decryption"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#ff050101" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2.0sp"
+            android:text="For Encryption Text only use 0-9,a-z,A-Z,Space,?,!,."
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#ff030202" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15.0sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/enteredText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:digits="0123456789 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,.ÀÓ1ďĉć%ĄÉÐĜýßěåġÂÛáāÞçÊÜØĆĖÝæĥĠà@äĞìčĔğÇË8#2ĊÃÁĎÄ×ČĈ5ÒÆ!ÑąĂþÖĒĀÕĝÔĵċÙñÅâÿèĴÏĹ:üĶÚĢĤĻîûģ3ĩĨãİħķī?éĘĦęĚúăœŒő7Íįg^ŐŏŎēŔėðÌïĽêëÈÎĕĪrùĺxĸļĬ6*s4Įĭ"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+            <Button
+                android:id="@+id/paste"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="68.0sp"
+                android:layout_height="40.0sp"
+                android:onClick="onPasteClick"
+                android:text="Paste" />
+            <Button
+                android:id="@+id/button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="68.0sp"
+                android:layout_height="40.0sp"
+                android:onClick="onEnterTextClick"
+                android:text="Clear" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.0sp"
+        android:background="#bbd7e2"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Password for Encryption or Decryption"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#ff030000" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2.0sp"
+            android:text="Only 6 symbols (0-9,a-z,A-Z,Space,?,!,.)"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#ff030101" />
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/etPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            >
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/passText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,.!?"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:paddingTop="5.0sp"
+                android:singleLine="true"
+                android:text="PASS01"
+                android:inputType="textPassword"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.0dip"
+        android:background="#b5f4cb"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Action:"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#ff030101" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioEncrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:onClick="OnEncryptionClick"
+                android:text="Encryption"
+                android:textColor="#ff040101" />
+
+            <RadioButton
+                android:id="@+id/radioDecrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:onClick="OnDecryptionClick"
+                android:text="Decryption"
+                android:textColor="#ff030101" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.0sp"
+        android:background="#ef9f9e"
+        android:orientation="vertical"
+        android:weightSum="1.0">
+
+        <TextView
+            android:id="@+id/EncDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Encrypted Text:"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#ff040202" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15.0sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/encrdecrText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:maxLines="1"
+                android:singleLine="true" />
+            <Button
+                android:id="@+id/CopyButton"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="68.0sp"
+                android:layout_height="40.0sp"
+                android:onClick="CopyToClipBoard"
+                android:text="Copy" />
+
+            <Button
+                android:id="@+id/button2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="40.0sp"
+                android:onClick="onResultTextClick"
+                android:text="Clear" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4.0sp"
+        android:background="#e602390a"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button4"
+            android:background="#3cbc4f"
+            android:layout_width="fill_parent"
+            android:layout_height="70.0dip"
+            android:onClick="onStart"
+            android:text="START ENCRYPTION"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4.0sp"
+        android:background="#797373"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/SHARE"
+            android:layout_width="fill_parent"
+            android:layout_height="70.0dip"
+            android:onClick="Share"
+            android:background="#f9b82c"
+            android:text="Share" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4.0sp"
+        android:background="#797373"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/open"
+            android:background="#e3ecae33"
+            android:layout_width="fill_parent"
+            android:layout_height="70.0dip"
+            android:onClick="open"
+            android:text="Open Notepad" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2.0sp"
+        android:background="#fc4949"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+        <Button
+            android:id="@+id/button5"
+            android:background="#f74d4d"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="59.0sp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.53"
+            android:onClick="onExit"
+            android:text="Exit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="29.0sp"
+        android:layout_marginTop="3.0sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Developed by Bivek Kumar Jaiswal"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
+
+
+</LinearLayout>
